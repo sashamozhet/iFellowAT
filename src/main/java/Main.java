@@ -56,7 +56,7 @@ public class Main {
     public static void ChangeRedColor(List<Car> cars){
         System.out.println("\nЗамена цвета красных машин: \n");
         for(Car car: cars){
-            if(car.getColor() == "Red"){
+            if(car.getColor().equals("Red")){
                 System.out.println("Машина " + car.getMark()+" " +car.getModel()+" " + car.getYear()
                         + " Красного цвета. Меняем на зелёный" );
                 car.setColor("Green");
@@ -70,7 +70,7 @@ public class Main {
     public static void findAutomaticTransmission(List<Car> cars){
         System.out.println("\nИщем машины с автоматической коробкой передач: \n");
         for(Car car: cars){
-            if(car.getTransmission() == "Automatic"){
+            if(car.getTransmission().equals("Automatic")){
                 System.out.println("Машина " + car.getMark()+" " +car.getModel()+" " + car.getYear()
                         + " Имеет автоматическую коробку передач" );
             }

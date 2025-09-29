@@ -1,4 +1,4 @@
-package pages;
+package ru.ifellow.alivenskiy.hw3.pages;
 
 import java.time.Duration;
 

@@ -1,9 +1,10 @@
-package tests;
+package ru.ifellow.alivenskiy.hw3;
+
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import pages.*;
+import ru.ifellow.alivenskiy.hw3.pages.*;
 
 import static com.codeborne.selenide.Selenide.*;
 

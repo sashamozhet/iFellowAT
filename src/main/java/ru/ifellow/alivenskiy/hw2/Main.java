@@ -1,21 +1,22 @@
+package ru.ifellow.alivenskiy.hw2;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    //it's Main origin
     public static void main(String[] args) {
         List<Car> garage = new ArrayList<>();
         garage.add(new Audi("Audi","A7", 2025, "Automatic", "Gasoline", 3.0, "Red", 201));
         garage.add(new Audi("Audi","Q7", 2004, "Mechanic", "Diesel", 4.0, "Orange", 382));
         garage.add(new BMW("BMW","X5", 2023, "Automatic", "Diesel", 3.0, "Red", 335));
-        garage.add(new BMW("BMW","3 Series", 2024, "Automatic", "Hybrid", 2.0, "Gray", 188));
+        garage.add(new BMW("hw2.BMW","3 Series", 2024, "Automatic", "Hybrid", 2.0, "Gray", 188));
         garage.add(new Hyundai("Hyundai","Elantra", 2015, "Automatic", "Gasoline", 1.6, "Brown", 132));
         garage.add(new Hyundai("Hyundai","Tucson", 2002, "Automatic", "Hybrid", 1.8, "Red", 175));
         garage.add(new Mercedes("Mercedes","E-Class", 2005, "Automatic", "Gasoline", 2.0, "Silver", 255));
         garage.add(new Mercedes("Mercedes","GLC", 2004, "Automatic", "Diesel", 2.0, "Black", 194));
         garage.add(new Nissan("Nissan","Qashqai", 2003, "Mechanic", "Gasoline", 1.3, "Red", 160));
-        garage.add(new Nissan("Nissan","X-Trail", 2004, "Mechanic", "Hybrid", 1.5, "Green", 121));
-        garage.add(new Toyota("Toyota","Corolla", 2011, "Automatic", "Gasoline", 2.5, "Black", 126));
+        garage.add(new Nissan("issan","X-Trail", 2004, "Mechanic", "Hybrid", 1.5, "Green", 121));
+        garage.add(new Toyota("oyota","Corolla", 2011, "Automatic", "Gasoline", 2.5, "Black", 126));
         garage.add(new Toyota("Toyota","Land Cruiser", 2008, "Automatic", "Diesel", 2.4, "Grey", 205));
 
         System.out.println("Количество машин в списке - " + garage.size()

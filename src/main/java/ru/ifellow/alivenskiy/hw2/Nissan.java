@@ -1,4 +1,6 @@
-public class Nissan extends Car{
+package ru.ifellow.alivenskiy.hw2;
+
+public class Nissan extends Car {
     public Nissan(String mark,
                   String model,
                    int year,
@@ -10,10 +12,10 @@ public class Nissan extends Car{
         super(mark,model, year, transmission, fuelType, engineVolume, color, horsePower);
     }
     public void startEngine() {
-        System.out.println("Запуск двигателя Nissan " + getModel());
+        System.out.println("Запуск двигателя ru.ifellow.alivenskiy.hw2.hw2.hw2.hw2.Nissan " + getModel());
     }
 
     public void displaySlogan() {
-        System.out.println("Лозунг компании Nissan: Превосходя ожидания");
+        System.out.println("Лозунг компании ru.ifellow.alivenskiy.hw2.hw2.hw2.hw2.Nissan: Превосходя ожидания");
     }
 }

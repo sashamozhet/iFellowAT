@@ -1,3 +1,5 @@
+package ru.ifellow.alivenskiy.hw2;
+
 public class BMW  extends  Car{
     public BMW(String mark,
                String model,
@@ -10,10 +12,10 @@ public class BMW  extends  Car{
         super(mark,model, year, transmission, fuelType, engineVolume, color, horsePower);
     }
     public void startEngine() {
-        System.out.println("Запуск двигателя BMW " + getModel());
+        System.out.println("Запуск двигателя ru.ifellow.alivenskiy.hw2.hw2.hw2.hw2.BMW " + getModel());
     }
 
     public void displaySlogan() {
-        System.out.println("Лозунг компании BMW: C удовольствием за рулём");
+        System.out.println("Лозунг компании ru.ifellow.alivenskiy.hw2.hw2.hw2.hw2.BMW: C удовольствием за рулём");
     }
 }

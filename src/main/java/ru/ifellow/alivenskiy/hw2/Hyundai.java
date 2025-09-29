@@ -1,3 +1,5 @@
+package ru.ifellow.alivenskiy.hw2;
+
 public class Hyundai extends Car{
 
     public Hyundai(String mark,
@@ -12,10 +14,10 @@ public class Hyundai extends Car{
     }
 
     public void startEngine() {
-        System.out.println("Запуск двигателя Hyundai " + getModel());
+        System.out.println("Запуск двигателя ru.ifellow.alivenskiy.hw2.hw2.hw2.hw2.Hyundai " + getModel());
     }
 
     public void displaySlogan() {
-        System.out.println("Лозунг компании Hyundai: Выбери свой путь");
+        System.out.println("Лозунг компании ru.ifellow.alivenskiy.hw2.hw2.hw2.hw2.Hyundai: Выбери свой путь");
     }
 }

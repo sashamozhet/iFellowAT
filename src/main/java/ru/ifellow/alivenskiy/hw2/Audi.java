@@ -1,6 +1,8 @@
-public class Toyota extends Car{
-    public Toyota(String mark,
-                  String model,
+package ru.ifellow.alivenskiy.hw2;
+
+public class Audi extends Car {
+    public Audi(String mark,
+                String model,
                    int year,
                    String transmission,
                    String fuelType,
@@ -10,10 +12,10 @@ public class Toyota extends Car{
         super(mark, model, year, transmission, fuelType, engineVolume, color, horsePower);
     }
     public void startEngine() {
-        System.out.println("Запуск двигателя Toyota " + getModel());
+        System.out.println("Запуск двигателя " + getMark());
     }
 
     public void displaySlogan() {
-        System.out.println("Лозунг компании Toyota: Управляй мечтой");
+        System.out.println("Лозунг компании ru.ifellow.alivenskiy.hw2.hw2.hw2.hw2.Audi: Превосходство высоких технологий");
     }
 }

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aaebe894-3533-4d68-a333-41abd022bf8b" name="Changes" comment="Убрал неиспользуемые классы из 2 домашки">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="32gftj0q8MoDhWvftxbaR4tnFB7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.ProjectDashboardTest.executor": "Run",
+    "JUnit.ProjectDashboardTest.taskCounterIncrementsAfterCreatingNewTaskTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "IF__HW5",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="iFellowAT" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectDashboardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iFellowAT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ProjectDashboardTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectDashboardTest.taskCounterIncrementsAfterCreatingNewTaskTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iFellowAT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ProjectDashboardTest" />
+      <option name="METHOD_NAME" value="taskCounterIncrementsAfterCreatingNewTaskTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ProjectDashboardTest.taskCounterIncrementsAfterCreatingNewTaskTest" />
+        <item itemvalue="JUnit.ProjectDashboardTest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ProjectDashboardTest.taskCounterIncrementsAfterCreatingNewTaskTest" />
+        <item itemvalue="JUnit.ProjectDashboardTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aaebe894-3533-4d68-a333-41abd022bf8b" name="Changes" comment="" />
+      <created>1757847355798</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757847355798</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <option name="closed" value="true" />
+      <created>1757848315849</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1757848315849</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Init Commit">
+      <option name="closed" value="true" />
+      <created>1757848939193</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1757848939193</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Готовый код из ветки develop">
+      <option name="closed" value="true" />
+      <created>1757856359900</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1757856359900</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Готовый код из ветки develop">
+      <option name="closed" value="true" />
+      <created>1757857520868</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1757857520868</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Запушил недостоющий метод">
+      <option name="closed" value="true" />
+      <created>1757858180582</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1757858180582</updated>
+    </task>
+    <task id="LOCAL-00006" summary="заменил == на метод equals в методах ChangeRedColor и findAutomaticTransmission">
+      <option name="closed" value="true" />
+      <created>1758187158345</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1758187158345</updated>
+    </task>
+    <task id="LOCAL-00007" summary="HW3 Ливенский.">
+      <option name="closed" value="true" />
+      <created>1758638390923</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1758638390923</updated>
+    </task>
+    <task id="LOCAL-00008" summary="убрал неиспользуемые зависимости">
+      <option name="closed" value="true" />
+      <created>1759140309332</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1759140309332</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Убрал неиспользуемые классы из 2 домашки">
+      <option name="closed" value="true" />
+      <created>1759140454092</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1759140454092</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit" />
+    <MESSAGE value="Init Commit" />
+    <MESSAGE value="Готовый код из ветки develop" />
+    <MESSAGE value="Запушил недостоющий метод" />
+    <MESSAGE value="заменил == на метод equals в методах ChangeRedColor и findAutomaticTransmission" />
+    <MESSAGE value="HW3 Ливенский." />
+    <MESSAGE value="убрал неиспользуемые зависимости" />
+    <MESSAGE value="Убрал неиспользуемые классы из 2 домашки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Убрал неиспользуемые классы из 2 домашки" />
+  </component>
+</project>

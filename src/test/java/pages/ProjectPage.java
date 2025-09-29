@@ -1,9 +1,6 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
-
 import java.time.Duration;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 

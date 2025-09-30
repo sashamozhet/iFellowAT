@@ -32,7 +32,6 @@ public class ReqresJsonTest {
                 .post("api/users")
                 .then().log().all()
                 .extract().response();
-        System.out.println(response);
        Assertions.assertEquals("Tomato", response.jsonPath().getString("name"));
        Assertions.assertEquals("Eat maket", response.jsonPath().getString("job"));
 

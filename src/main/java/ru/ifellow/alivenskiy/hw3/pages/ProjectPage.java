@@ -1,32 +1,34 @@
 package ru.ifellow.alivenskiy.hw3.pages;
 
+import com.codeborne.selenide.SelenideElement;
+
 import java.time.Duration;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ProjectPage {
-    private final String projectsCount = "//div[@class = 'showing']//parent::span";
-    private final String createTaskLink = "//a[@id = 'create_link']";
-    private final String quickSearchInput = "//input[@id = 'quickSearchInput']";
+    private final SelenideElement projectsCount = $x("//div[@class = 'showing']//parent::span");
+    private final SelenideElement createTaskLink = $x("//a[@id = 'create_link']");
+    private final SelenideElement quickSearchInput = $x("//input[@id = 'quickSearchInput']");
 
     public int getTotalTasksCount(){
-        String text = $x(projectsCount).getText();
+        String text = projectsCount.getText();
         String parts = text.split(" ")[text.split(" ").length - 1];
         int countOfTasks = Integer.parseInt(parts);
         return  countOfTasks;
     }
     public void waitForTaskCount(int expectedCount){
         String expectedText = String.valueOf(expectedCount);
-        $x(projectsCount).shouldHave(text(expectedText), Duration.ofSeconds(10));
+        projectsCount.shouldHave(text(expectedText), Duration.ofSeconds(10));
 
     }
     public CreateTaskPage clickCreateTask(){
-        $x(createTaskLink).shouldBe(visible).click();
+        createTaskLink.shouldBe(visible).click();
         return  new CreateTaskPage();
     }
     public TaskPage openTask(String projectName){
-        $x(quickSearchInput).click();
-        $x(quickSearchInput).setValue(projectName).pressEnter();
+        quickSearchInput.click();
+        quickSearchInput.setValue(projectName).pressEnter();
         return new TaskPage();
     }
 

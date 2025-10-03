@@ -8,19 +8,18 @@ import ru.ifellow.alivenskiy.hw3.pages.*;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class ProjectDashboardTest {
-
+public class TaskStatusVersionTest {
     @BeforeAll
     static void setUp() {
         Configuration.baseUrl = "https://edujira.ifellow.ru";
+        Configuration.timeout = 10000;
         open("/");
         webdriver().driver().getWebDriver().manage().window().maximize();
+    }
+    @Test
+    public void canCreateBugReportFromTaskTest() {
         LoginPage loginPage = new LoginPage();
         loginPage.logInAccount("AT5", "Qwerty123");
-    }
-
-    @Test
-    public void taskCounterIncrementsAfterCreatingNewTaskTest() {
         DashboardPage dashboardPage = new DashboardPage();
         ProjectPage projectPage = dashboardPage.openProjectPage();
         int initialCount = projectPage.getTotalTasksCount();
@@ -28,32 +27,11 @@ public class ProjectDashboardTest {
         refresh();
         projectPage.waitForTaskCount(initialCount + 1);
         int updatedCount = projectPage.getTotalTasksCount();
-
         Assertions.assertEquals(initialCount + 1, updatedCount);
-    }
-
-    @Test
-    public void taskStatusAndVersionAreCorrectTest() {
-        DashboardPage dashboardPage = new DashboardPage();
-        ProjectPage projectPage = dashboardPage.openProjectPage();
-
         TaskPage taskPage = projectPage.openTask("TestSeleniumATHomework");
         taskPage.verifyStatusAndVersion("Сделать", "Version 2.0");
-    }
-
-    @Test
-    public void canCreateBugReportFromTaskTest() {
-        DashboardPage dashboardPage = new DashboardPage();
-        ProjectPage projectPage = dashboardPage.openProjectPage();
-        TaskPage taskPage = projectPage.openTask("TestSeleniumATHomework");
         BugReportPage bugReportPage = taskPage.createBugReport();
         bugReportPage.createBugReport("Test123_aliv60", "Ошибка", "abs");
-    }
 
-    @Test
-    public void userCanLoginSuccessfullyTest() {
-        open("/");
-        LoginPage loginPage = new LoginPage();
-        DashboardPage dashboardPage = loginPage.logInAccount("AT5", "Qwerty123");
     }
 }

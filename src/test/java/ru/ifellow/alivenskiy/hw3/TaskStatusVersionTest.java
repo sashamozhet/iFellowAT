@@ -3,9 +3,12 @@ package ru.ifellow.alivenskiy.hw3;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.ifellow.alivenskiy.hw3.pages.*;
-
+import ru.ifellow.alivenskiy.hw3.pages.DashboardPage;
+import ru.ifellow.alivenskiy.hw3.pages.LoginPage;
+import ru.ifellow.alivenskiy.hw3.pages.ProjectPage;
+import ru.ifellow.alivenskiy.hw3.pages.TaskPage;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TaskStatusVersionTest {
@@ -17,7 +20,8 @@ public class TaskStatusVersionTest {
         webdriver().driver().getWebDriver().manage().window().maximize();
     }
     @Test
-    public void canCreateBugReportFromTaskTest() {
+    @DisplayName("Тест на проверку статуса и версии задачи без её изменений")
+    public void taskStatusAndVersionAreCorrectTest() {
         LoginPage loginPage = new LoginPage();
         loginPage.logInAccount("AT5", "Qwerty123");
         DashboardPage dashboardPage = new DashboardPage();
@@ -30,8 +34,5 @@ public class TaskStatusVersionTest {
         Assertions.assertEquals(initialCount + 1, updatedCount);
         TaskPage taskPage = projectPage.openTask("TestSeleniumATHomework");
         taskPage.verifyStatusAndVersion("Сделать", "Version 2.0");
-        BugReportPage bugReportPage = taskPage.createBugReport();
-        bugReportPage.createBugReport("Test123_aliv60", "Ошибка", "abs");
-
     }
 }

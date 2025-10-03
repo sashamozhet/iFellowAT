@@ -1,7 +1,6 @@
 package ru.ifellow.alivenskiy.hw3.pages;
 
 import com.codeborne.selenide.SelenideElement;
-
 import java.time.Duration;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;

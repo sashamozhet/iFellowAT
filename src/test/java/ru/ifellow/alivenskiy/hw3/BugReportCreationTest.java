@@ -3,23 +3,23 @@ package ru.ifellow.alivenskiy.hw3;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.ifellow.alivenskiy.hw3.pages.DashboardPage;
-import ru.ifellow.alivenskiy.hw3.pages.LoginPage;
-import ru.ifellow.alivenskiy.hw3.pages.ProjectPage;
-import ru.ifellow.alivenskiy.hw3.pages.TaskPage;
+import ru.ifellow.alivenskiy.hw3.pages.*;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class BugReportCreationTest  {
+public class BugReportCreationTest {
     @BeforeAll
     static void setUp() {
         Configuration.baseUrl = "https://edujira.ifellow.ru";
+        Configuration.timeout = 10000;
         open("/");
         webdriver().driver().getWebDriver().manage().window().maximize();
     }
     @Test
-    public void taskStatusAndVersionAreCorrectTest() {
+    @DisplayName("Тест, содержащий в себе все сценарии")
+    public void canCreateBugReportFromTaskTest() {
         LoginPage loginPage = new LoginPage();
         loginPage.logInAccount("AT5", "Qwerty123");
         DashboardPage dashboardPage = new DashboardPage();
@@ -32,5 +32,8 @@ public class BugReportCreationTest  {
         Assertions.assertEquals(initialCount + 1, updatedCount);
         TaskPage taskPage = projectPage.openTask("TestSeleniumATHomework");
         taskPage.verifyStatusAndVersion("Сделать", "Version 2.0");
+        BugReportPage bugReportPage = taskPage.createBugReport();
+        CreatedBugPage createdBugPage = bugReportPage.createBugReport("Test123_aliv62", "Ошибка", "abs");
+        Assertions.assertTrue(createdBugPage.isPageLoaded());
     }
 }

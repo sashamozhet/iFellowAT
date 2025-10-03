@@ -15,11 +15,12 @@ public class BugReportPage {
     private final ElementsCollection visualButtonsOn = $$x("//button[text()='Визуальный']") ;
     private final String editFrames  = "//iframe[starts-with(@id,'mce_')]";
     private final String bodyFrame = "//body[@id='tinymce']";
+    private final SelenideElement createdTaskLink = $x("//div[@id='aui-flag-container']//a");
 
     private void fillBothDescriptions(String text) {
-        ElementsCollection editorFrames = $$x(editFrames).shouldHave(sizeGreaterThan(0), Duration.ofSeconds(10));
+        ElementsCollection editorFrames = $$x(editFrames).shouldHave(size(2), Duration.ofSeconds(10));
         switchTo().frame(editorFrames.get(0).shouldBe(visible));
-        $x(bodyFrame).shouldBe(visible, Duration.ofSeconds(10)).setValue(text);
+        $x(bodyFrame).shouldBe(visible).shouldBe().setValue(text);
         switchTo().defaultContent();
         switchTo().frame(editorFrames.get(1).shouldBe(visible));
         $x(bodyFrame).shouldBe(visible, Duration.ofSeconds(5)).shouldBe(editable).setValue(text);
@@ -36,7 +37,7 @@ public class BugReportPage {
 
     }
 
-    public void createBugReport(String theme, String tasksType, String descriptionValue){
+    public CreatedBugPage createBugReport(String theme, String tasksType, String descriptionValue){
         bugInput.doubleClick();
         bugInput.sendKeys(Keys.BACK_SPACE);
         bugInput.setValue(tasksType);
@@ -44,6 +45,8 @@ public class BugReportPage {
         waitVisualModeButtons();
         fillBothDescriptions(descriptionValue);
         themeValue.setValue(theme).pressEnter();
+        createdTaskLink.shouldBe(visible, Duration.ofSeconds(10)).click();
+        return new CreatedBugPage();
     }
 
 

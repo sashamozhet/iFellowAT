@@ -1,3 +1,5 @@
+package ru.ifellow.alivenskiy.hw2;
+
 public abstract class Car {
     private String mark;
     private String model;

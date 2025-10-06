@@ -1,8 +1,10 @@
+package ru.ifellow.alivenskiy.hw2;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    //it's Main origin
+    //it's ru.ifellow.alivenskiy.Main origin
     public static void main(String[] args) {
         List<Car> garage = new ArrayList<>();
         garage.add(new Audi("Audi","A7", 2025, "Automatic", "Gasoline", 3.0, "Red", 201));

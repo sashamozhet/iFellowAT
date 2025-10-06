@@ -1,3 +1,5 @@
+package ru.ifellow.alivenskiy.hw2;
+
 public class Mercedes extends  Car{
     public Mercedes(String mark,
                     String model,
@@ -10,7 +12,7 @@ public class Mercedes extends  Car{
         super(mark,model, year, transmission, fuelType, engineVolume, color, horsePower);
     }
     public void startEngine() {
-        System.out.println("Запуск двигателя Mercedes " + getModel());
+        System.out.println("Запуск двигателя ru.ifellow.alivenskiy.Mercedes " + getModel());
     }
 
     public void displaySlogan() {

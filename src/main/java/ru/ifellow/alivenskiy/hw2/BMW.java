@@ -1,7 +1,8 @@
-public class Hyundai extends Car{
+package ru.ifellow.alivenskiy.hw2;
 
-    public Hyundai(String mark,
-                   String model,
+public class BMW  extends  Car{
+    public BMW(String mark,
+               String model,
                    int year,
                    String transmission,
                    String fuelType,
@@ -10,12 +11,11 @@ public class Hyundai extends Car{
                    int horsePower) {
         super(mark,model, year, transmission, fuelType, engineVolume, color, horsePower);
     }
-
     public void startEngine() {
-        System.out.println("Запуск двигателя Hyundai " + getModel());
+        System.out.println("Запуск двигателя ru.ifellow.alivenskiy.BMW " + getModel());
     }
 
     public void displaySlogan() {
-        System.out.println("Лозунг компании Hyundai: Выбери свой путь");
+        System.out.println("Лозунг компании BMW: C удовольствием за рулём");
     }
 }

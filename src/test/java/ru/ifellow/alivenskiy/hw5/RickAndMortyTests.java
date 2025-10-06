@@ -3,7 +3,6 @@ package ru.ifellow.alivenskiy.hw5;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.ifellow.alivenskiy.hw5.Specifications.Specifications;
-
 import java.util.List;
 import static io.restassured.RestAssured.*;
 

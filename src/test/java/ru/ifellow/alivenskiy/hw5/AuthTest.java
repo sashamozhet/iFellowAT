@@ -1,11 +1,8 @@
 package ru.ifellow.alivenskiy.hw5;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.ifellow.alivenskiy.hw5.Specifications.Specifications;
-
 import java.io.File;
 import java.io.IOException;
 

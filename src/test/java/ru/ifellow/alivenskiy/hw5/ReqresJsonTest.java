@@ -34,8 +34,5 @@ public class ReqresJsonTest {
                 .extract().response();
        Assertions.assertEquals("Tomato", response.jsonPath().getString("name"));
        Assertions.assertEquals("Eat maket", response.jsonPath().getString("job"));
-
-
-
     }
 }

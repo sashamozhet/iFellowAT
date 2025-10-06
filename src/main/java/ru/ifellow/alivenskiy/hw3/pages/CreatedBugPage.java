@@ -21,6 +21,6 @@ public String getCurrentStatusOfTask(){
         doneLink.shouldBe(visible, Duration.ofSeconds(5)).click();
     }
     public boolean isPageLoaded() {
-        return statusOfTheCreatedTask.isDisplayed();
+        return statusOfTheCreatedTask.shouldBe(visible).isDisplayed();
     }
 }

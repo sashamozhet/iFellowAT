@@ -6,9 +6,9 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TaskPage {
-    private final SelenideElement status = $x("//span[@id = 'status-val']");
-    private final SelenideElement version = $x("//span[@id = 'versions-field']");
-    private final SelenideElement createTaskLink = $x("//a[@id = 'create_link']");
+    private final SelenideElement status = $x("//span[@id = 'status-val']").as("Статус задачи");
+    private final SelenideElement version = $x("//span[@id = 'versions-field']").as("Версия задачи");
+    private final SelenideElement createTaskLink = $x("//a[@id = 'create_link']").as("Кнопка создания задачи");
 
     public void verifyStatusAndVersion(String expectedStatus, String expectedVersion){
         status.shouldHave(text(expectedStatus), Duration.ofSeconds(10));

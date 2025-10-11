@@ -7,9 +7,9 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class CreatedBugPage {
-    private final SelenideElement selectStatusLink = $x("//a[@id='opsbar-transitions_more']");
-    private final SelenideElement doneLink = $x("//aui-item-link[@id='action_id_31']");
-    private final SelenideElement statusOfTheCreatedTask = $x("//span[@id='status-val']");
+    private final SelenideElement selectStatusLink = $x("//a[@id='opsbar-transitions_more']").as("Выпадающее меню Бизнес-процесс");
+    private final SelenideElement doneLink = $x("//aui-item-link[@id='action_id_31']").as("Вариант ВЫПОЛНЕНО в списке Бизнец-процесс");
+    private final SelenideElement statusOfTheCreatedTask = $x("//span[@id='status-val']").as("Статус созданной задачи");
 
 
 public String getCurrentStatusOfTask(){

@@ -10,7 +10,8 @@ import static io.cucumber.core.options.Constants.PLUGIN_PROPERTY_NAME;
 @Suite
 @IncludeEngines("cucumber")
 @SelectClasspathResource("hw4/features")
-@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "ru.ifellow.alivenskiy.hw4.steps")
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "ru.ifellow.alivenskiy.hw4")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty, html:target/cucumber-report.html")
 public class TestRunner {
+
 }

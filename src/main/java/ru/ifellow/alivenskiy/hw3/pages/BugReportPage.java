@@ -13,17 +13,17 @@ public class BugReportPage {
     private final SelenideElement bugInput = $x("//input[@id = 'issuetype-field']");
     private final SelenideElement themeValue = $x("//input[@id = 'summary']");
     private final ElementsCollection visualButtonsOn = $$x("//button[text()='Визуальный']") ;
-    private final String editFrames  = "//iframe[starts-with(@id,'mce_')]";
-    private final String bodyFrame = "//body[@id='tinymce']";
+    private final ElementsCollection editFrames  = $$x("//iframe[starts-with(@id,'mce_')]");
+    private final SelenideElement bodyFrame = $x("//body[@id='tinymce']");
     private final SelenideElement createdTaskLink = $x("//div[@id='aui-flag-container']//a");
 
     private void fillBothDescriptions(String text) {
-        ElementsCollection editorFrames = $$x(editFrames).shouldHave(size(2), Duration.ofSeconds(10));
+        ElementsCollection editorFrames = editFrames.shouldHave(size(2), Duration.ofSeconds(10));
         switchTo().frame(editorFrames.get(0).shouldBe(visible));
-        $x(bodyFrame).shouldBe(visible).shouldBe().setValue(text);
+        bodyFrame.shouldBe(visible).shouldBe().setValue(text);
         switchTo().defaultContent();
         switchTo().frame(editorFrames.get(1).shouldBe(visible));
-        $x(bodyFrame).shouldBe(visible, Duration.ofSeconds(5)).shouldBe(editable).setValue(text);
+        bodyFrame.shouldBe(visible, Duration.ofSeconds(5)).shouldBe(editable).setValue(text);
         switchTo().defaultContent();
     }
     private void waitVisualModeButtons(){

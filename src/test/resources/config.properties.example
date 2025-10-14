@@ -1,0 +1,16 @@
+base.url=https://edujira.ifellow.ru
+
+login=
+password=
+
+test.theme=Тест_aliv
+test.bug.theme=Test123_aliv62
+test.bug.type=Ошибка
+test.bug.description=abs
+test.task.name=TestSeleniumATHomework
+
+expected.status=Сделать
+expected.version=Version 2.0
+expected.done.status=ГОТОВО
+
+timeout=10000

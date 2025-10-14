@@ -5,12 +5,15 @@ import org.junit.jupiter.api.*;
 import ru.ifellow.alivenskiy.hw3.pages.DashboardPage;
 import ru.ifellow.alivenskiy.hw3.pages.LoginPage;
 import ru.ifellow.alivenskiy.hw3.pages.ProjectPage;
+import ru.ifellow.alivenskiy.hw3.utils.ConfigReader;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class ProjectTaskCounterTest {
     @BeforeAll
      static void setUp() {
-        Configuration.baseUrl = "https://edujira.ifellow.ru";
+        Configuration.baseUrl = ConfigReader.getBaseUrl();
+        Configuration.timeout = ConfigReader.getTimeout();
         open("/");
         webdriver().driver().getWebDriver().manage().window().maximize();
     }
@@ -22,11 +25,11 @@ public class ProjectTaskCounterTest {
     @DisplayName("Тест на увеличение количества задач на 1 после создания новой")
     public void taskCounterIncrementsAfterCreatingNewTaskTest() {
         LoginPage loginPage = new LoginPage();
-        loginPage.logInAccount("AT5", "Qwerty123");
+        loginPage.logInAccount(ConfigReader.getLogin(), ConfigReader.getPassword());
         DashboardPage dashboardPage = new DashboardPage();
         ProjectPage projectPage = dashboardPage.openProjectPage();
         int initialCount = projectPage.getTotalTasksCount();
-        projectPage.clickCreateTask().createTask("Тест_aliv");
+        projectPage.clickCreateTask().createTask(ConfigReader.getTestTheme());
         refresh();
         projectPage.waitForTaskCount(initialCount + 1);
         int updatedCount = projectPage.getTotalTasksCount();

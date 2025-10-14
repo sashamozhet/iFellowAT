@@ -41,4 +41,5 @@ build/
 .allure/
 allure-results/
 allure-report/
-target/
+
+src/test/resources/config.properties

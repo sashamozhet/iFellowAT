@@ -3,7 +3,6 @@ package ru.ifellow.alivenskiy.hw3;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
 import ru.ifellow.alivenskiy.hw3.pages.*;
-
 import static com.codeborne.selenide.Selenide.*;
 
 public class BugWorkflowTest {

@@ -20,7 +20,7 @@ public class BugWorkflowTest {
     }
 
     @Test
-    @DisplayName("Тест на перевод созданного бага в статус 'Готово'")
+    @DisplayName("Тест, содержащий в себе все сценарии")
     public void bugCanBeMovedToDoneStatusTest() {
         LoginPage loginPage = new LoginPage();
         loginPage.logInAccount("AT5", "Qwerty123");

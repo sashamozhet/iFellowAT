@@ -19,7 +19,7 @@ public class BugReportCreationTest {
         closeWebDriver();
     }
     @Test
-    @DisplayName("Тест, содержащий в себе все сценарии")
+    @DisplayName("Тест на создание баг-репорта с заполнением полей")
     public void canCreateBugReportFromTaskTest() {
         LoginPage loginPage = new LoginPage();
         loginPage.logInAccount("AT5", "Qwerty123");

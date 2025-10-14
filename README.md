@@ -9,6 +9,10 @@
 - Allure Framework
 - Maven
 
+## Properties файл
+Для корректной отработки тестов файл _config.properties.example_ необходимо переименовать 
+в config.properties, а также заполнить поле _login_, _password_ валидными значениями 
+
 ## Запуск тестов
 
 ### Через Maven в командной строке:

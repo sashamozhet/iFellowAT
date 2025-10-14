@@ -1,10 +1,7 @@
 package ru.ifellow.alivenskiy.hw3;
 
 import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import ru.ifellow.alivenskiy.hw3.pages.DashboardPage;
 import ru.ifellow.alivenskiy.hw3.pages.LoginPage;
 import ru.ifellow.alivenskiy.hw3.pages.ProjectPage;
@@ -16,6 +13,10 @@ public class ProjectTaskCounterTest {
         Configuration.baseUrl = "https://edujira.ifellow.ru";
         open("/");
         webdriver().driver().getWebDriver().manage().window().maximize();
+    }
+    @AfterEach
+    void tearDown() {
+        closeWebDriver();
     }
     @Test
     @DisplayName("Тест на увеличение количества задач на 1 после создания новой")

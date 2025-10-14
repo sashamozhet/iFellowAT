@@ -1,7 +1,8 @@
 package ru.ifellow.alivenskiy.hw3.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import static com.codeborne.selenide.Condition.*;
+import io.qameta.allure.Step;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class DashboardPage {
@@ -9,11 +10,14 @@ public class DashboardPage {
     private final SelenideElement testProjectLink = $x("//a[@id = 'admin_main_proj_link_lnk']").as("проект TEST в выпадающем списке Проекты");
     private final SelenideElement projectMenu = $x("//header[@id='header']").as("Header при входе в личный кабинет");
 
+    @Step("Открыть страницу проекта")
     public ProjectPage openProjectPage(){
         projectsMenu.shouldBe(visible).click();
         testProjectLink.click();
         return new ProjectPage();
     }
+
+    @Step("Проверить, что выпадающий список Проекты отображается")
     public boolean isProjectMenuDisplayed(){
         return projectMenu.shouldBe(visible).isDisplayed();
     }

@@ -1,10 +1,7 @@
 package ru.ifellow.alivenskiy.hw3;
 
 import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import ru.ifellow.alivenskiy.hw3.pages.*;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -16,6 +13,10 @@ public class BugReportCreationTest {
         Configuration.timeout = 10000;
         open("/");
         webdriver().driver().getWebDriver().manage().window().maximize();
+    }
+    @AfterEach
+    void tearDown() {
+        closeWebDriver();
     }
     @Test
     @DisplayName("Тест, содержащий в себе все сценарии")

@@ -10,11 +10,11 @@ public class ConfigReader {
     static {
         try (InputStream input = ConfigReader.class.getClassLoader().getResourceAsStream("config.properties")) {
             if (input == null) {
-                throw new RuntimeException("Unable to find config.properties");
+                throw new RuntimeException("Файл не найден!");
             }
             properties.load(input);
         } catch (IOException e) {
-            throw new RuntimeException("Failed to load config.properties", e);
+            throw new RuntimeException("Ошибка чтения файла");
         }
     }
 

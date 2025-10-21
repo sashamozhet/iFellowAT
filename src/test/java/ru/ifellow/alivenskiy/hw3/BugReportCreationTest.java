@@ -1,29 +1,25 @@
 package ru.ifellow.alivenskiy.hw3;
 
-import com.codeborne.selenide.Configuration;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
 import ru.ifellow.alivenskiy.hw3.pages.*;
 import ru.ifellow.alivenskiy.hw3.utils.ConfigReader;
-
 import static com.codeborne.selenide.Selenide.*;
 
-public class BugReportCreationTest {
-    @BeforeAll
-    static void setUp() {
-        Configuration.baseUrl = ConfigReader.getBaseUrl();
-        Configuration.timeout = ConfigReader.getTimeout();
-        open("/");
-        webdriver().driver().getWebDriver().manage().window().maximize();
-    }
-    @AfterEach
-    void tearDown() {
-        closeWebDriver();
-    }
+@Epic("Управление задачами JIRA")
+@Feature("Создание баг-репортов")
+@Owner("Alivenskiy")
+@DisplayName("Тест создания баг-репорта")
+public class BugReportCreationTest extends BaseTest {
+
     @Test
-    @DisplayName("Тест на создание баг-репорта с заполнением полей")
+    @DisplayName("Создание баг-репорта с заполнением всех обязательных полей")
+    @Story("Пользователь может создать баг-репорт с описанием ошибки")
+    @Tag("Regression")
+    @Tag("баг-репорт")
     public void canCreateBugReportFromTaskTest() {
         LoginPage loginPage = new LoginPage();
-        loginPage.logInAccount(ConfigReader.getLogin(), ConfigReader.getPassword());
+        loginPage.logInAccount();
         DashboardPage dashboardPage = new DashboardPage();
         ProjectPage projectPage = dashboardPage.openProjectPage();
         int initialCount = projectPage.getTotalTasksCount();

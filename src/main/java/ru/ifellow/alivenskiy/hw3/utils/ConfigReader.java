@@ -18,10 +18,20 @@ public class ConfigReader {
         }
     }
 
+    public static boolean isAllureScreenshotsEnabled() {
+        return Boolean.parseBoolean(getProperty("allure.screenshots"));
+    }
+
+    public static boolean isAllurePageSourceEnabled() {
+        return Boolean.parseBoolean(getProperty("allure.pagesource"));
+    }
+    public static boolean isAllureSelenideStepsEnabled() {
+        return Boolean.parseBoolean(getProperty("allure.selenide.steps"));
+    }
+
     public static String getProperty(String key) {
         return properties.getProperty(key);
     }
-
     public static String getBaseUrl() { return getProperty("base.url"); }
     public static String getLogin() { return getProperty("login"); }
     public static String getPassword() { return getProperty("password"); }

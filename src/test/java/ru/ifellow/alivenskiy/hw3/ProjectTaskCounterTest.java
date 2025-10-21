@@ -1,31 +1,27 @@
 package ru.ifellow.alivenskiy.hw3;
 
-import com.codeborne.selenide.Configuration;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
 import ru.ifellow.alivenskiy.hw3.pages.DashboardPage;
 import ru.ifellow.alivenskiy.hw3.pages.LoginPage;
 import ru.ifellow.alivenskiy.hw3.pages.ProjectPage;
 import ru.ifellow.alivenskiy.hw3.utils.ConfigReader;
-
 import static com.codeborne.selenide.Selenide.*;
 
-public class ProjectTaskCounterTest {
-    @BeforeAll
-     static void setUp() {
-        Configuration.baseUrl = ConfigReader.getBaseUrl();
-        Configuration.timeout = ConfigReader.getTimeout();
-        open("/");
-        webdriver().driver().getWebDriver().manage().window().maximize();
-    }
-    @AfterEach
-    void tearDown() {
-        closeWebDriver();
-    }
+@Epic("Управление задачами JIRA")
+@Feature("Статистика проекта")
+@Owner("Alivenskiy")
+@DisplayName("Тесты счётчика задач проектов")
+public class ProjectTaskCounterTest extends BaseTest {
+
     @Test
-    @DisplayName("Тест на увеличение количества задач на 1 после создания новой")
+    @DisplayName("Счетчик задач увеличивается при создании новой задачи")
+    @Story("Система корректно отслеживает количество задач в проекте")
+    @Tag("Regression")
+    @Tag("Статистика")
     public void taskCounterIncrementsAfterCreatingNewTaskTest() {
         LoginPage loginPage = new LoginPage();
-        loginPage.logInAccount(ConfigReader.getLogin(), ConfigReader.getPassword());
+        loginPage.logInAccount();
         DashboardPage dashboardPage = new DashboardPage();
         ProjectPage projectPage = dashboardPage.openProjectPage();
         int initialCount = projectPage.getTotalTasksCount();

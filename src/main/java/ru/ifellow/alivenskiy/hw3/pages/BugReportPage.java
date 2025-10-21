@@ -10,20 +10,20 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class BugReportPage {
-    private final SelenideElement bugInput = $x("//input[@id = 'issuetype-field']");
-    private final SelenideElement themeValue = $x("//input[@id = 'summary']");
-    private final ElementsCollection visualButtonsOn = $$x("//button[text()='Визуальный']");
-    private final ElementsCollection editFrames = $$x("//iframe[starts-with(@id,'mce_')]");
-    private final SelenideElement bodyFrame = $x("//body[@id='tinymce']");
-    private final SelenideElement createdTaskLink = $x("//div[@id='aui-flag-container']//a");
+    private final SelenideElement bugInput = $x("//input[@id = 'issuetype-field']").as("Тип задачи");
+    private final SelenideElement themeValue = $x("//input[@id = 'summary']").as("Тема задачи");
+    private final ElementsCollection visualButtonsOn = $$x("//button[text()='Визуальный']").as("Кнопки Визуальный");
+    private final ElementsCollection editFrames = $$x("//iframe[starts-with(@id,'mce_')]").as("Фреймы");
+    private final SelenideElement bodyFrame = $x("//body[@id='tinymce']").as("поля ввода внутри фреймов");
+    private final SelenideElement createdTaskLink = $x("//div[@id='aui-flag-container']//a").as("Ссылка на созданную задачу");
 
     @Step("Заполнить описания полей внутри frame текстом: {text}")
     private void fillBothDescriptions(String text) {
         ElementsCollection editorFrames = editFrames.shouldHave(size(2), Duration.ofSeconds(10));
-        switchTo().frame(editorFrames.get(0).shouldBe(visible));
+        switchTo().frame(editorFrames.get(0).shouldBe(visible).shouldBe(interactable));
         bodyFrame.shouldBe(visible).setValue(text);
         switchTo().defaultContent();
-        switchTo().frame(editorFrames.get(1).shouldBe(visible));
+        switchTo().frame(editorFrames.get(1).shouldBe(visible).shouldBe(interactable));
         bodyFrame.shouldBe(visible, Duration.ofSeconds(5)).shouldBe(editable).setValue(text);
         switchTo().defaultContent();
     }

@@ -2,6 +2,7 @@ package ru.ifellow.alivenskiy.hw3.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import ru.ifellow.alivenskiy.hw3.utils.ConfigReader;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -9,16 +10,16 @@ public class LoginPage {
     private final SelenideElement loginField = $x("//input[@id = 'login-form-username']").as("Поле ввода логина");
     private final SelenideElement passwordField = $x("//input[@id = 'login-form-password']").as("Поле ввода пароля");
 
-    @Step("Ввести логин: {login}")
-    public LoginPage enterLogin(String login) {
+    @Step("Ввести логин")
+    public void enterLogin() {
+        String login = ConfigReader.getLogin();
         loginField.should(visible).setValue(login);
-        return this;
     }
 
     @Step("Ввести пароль")
-    public LoginPage enterPassword(String password) {
+    public void enterPassword() {
+        String password = ConfigReader.getPassword();
         passwordField.should(visible).setValue(password);
-        return this;
     }
 
     @Step("Нажать кнопку входа")
@@ -27,10 +28,10 @@ public class LoginPage {
         return new DashboardPage();
     }
 
-    @Step("Выполнить вход с логином {login}")
-    public DashboardPage logInAccount(String login, String password){
-        enterLogin(login);
-        enterPassword(password);
+    @Step("Выполнить вход в систему")
+    public DashboardPage logInAccount(){
+        enterLogin();
+        enterPassword();
         return pressEnter();
     }
 }

@@ -24,7 +24,6 @@ public class AuthTest {
                 .then().log().all()
                 .statusCode(200)
                 .extract().response();
-        System.out.println(1);
 
         //Step 2.a
         ObjectMapper mapper = new ObjectMapper();
@@ -82,10 +81,6 @@ public class AuthTest {
                 .statusCode(200)
                 .extract().response().getBody().asString();
         Assertions.assertEquals("success logout", succesToken);
-
-
-
-
     }
 
 }

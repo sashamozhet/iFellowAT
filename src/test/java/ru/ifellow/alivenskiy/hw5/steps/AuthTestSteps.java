@@ -8,8 +8,8 @@ import ru.ifellow.alivenskiy.hw5.testUtils.ApiUtils;
 import java.io.File;
 import java.io.IOException;
 import io.qameta.allure.Step;
-
 import static org.junit.jupiter.api.Assertions.*;
+
 
 public class AuthTestSteps {
 
@@ -65,17 +65,22 @@ public class AuthTestSteps {
     }
 
 
-    @Step("Входим с верными данными")
+    @Step("Входим с верными данными и получаем токен")
     @Когда("пользователь входит с верными данными")
     public void loginWithValidCredentials() {
+        // Используем готовый метод который возвращает токен
+        authToken = ApiUtils.loginAndGetToken(userFromFile);
+        assertNotNull(authToken, "Auth token should not be null");
+
+        // Сохраняем response для возможных дополнительных проверок
         response = ApiUtils.loginUser(userFromFile);
     }
 
-    @Step("Проверяем успешный вход и получение токена")
+    @Step("Проверяем успешный вход")
     @Тогда("вход должен быть успешным и возвращен токен")
     public void verifySuccessfulLogin() {
         assertEquals(200, response.statusCode());
-        authToken = response.getBody().asString().replace("token : ", "");
+        // Токен уже получен в loginWithValidCredentials(), проверяем что он не null
         assertNotNull(authToken, "Auth token should not be null");
     }
 

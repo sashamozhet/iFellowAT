@@ -1,12 +1,10 @@
 package ru.ifellow.alivenskiy.hw5.steps;
 
 import io.cucumber.java.ru.*;
-import ru.ifellow.alivenskiy.hw5.Specifications.Specifications;
+import io.restassured.response.Response;
 import ru.ifellow.alivenskiy.hw5.testUtils.RickAndMortyUtils;
-import ru.ifellow.alivenskiy.hw5.utils.TestConfig;
 import java.util.List;
 import io.qameta.allure.Step;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RickAndMortyTestSteps {
@@ -24,13 +22,9 @@ public class RickAndMortyTestSteps {
     @Step("Получаем информацию о персонаже Морти")
     @Когда("получаем информацию о Морти")
     public void getMortyInfo() {
-        Specifications.installSpecification(
-                Specifications.requestSpecification(TestConfig.getRickAndMortyUrl()),
-                Specifications.responseSpecOK200()
-        );
-
-        mortySpecies = RickAndMortyUtils.getCharacterSpecies("/character/2");
-        mortyLocation = RickAndMortyUtils.getCharacterLocation("/character/2");
+        Response mortyResponse = RickAndMortyUtils.getCharacter(2);
+        mortySpecies = mortyResponse.jsonPath().getString("species");
+        mortyLocation = mortyResponse.jsonPath().getString("location.name");
     }
 
 

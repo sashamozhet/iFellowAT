@@ -11,12 +11,10 @@ public class TestConfig {
         try (InputStream input = TestConfig.class.getClassLoader()
                 .getResourceAsStream("config.properties")) {
             if (input == null) {
-                System.out.println("error 1");
                 throw new RuntimeException("Файл не найден!");
             }
             PROPERTIES.load(input);
         } catch (IOException e) {
-            System.out.println("error 2");
             throw new RuntimeException("Ошибка чтения файла", e);
         }
     }
@@ -31,13 +29,5 @@ public class TestConfig {
 
     public static String getRickAndMortyUrl() {
         return getProperty("rickandmorty.url");
-    }
-
-    public static String getTestUsername() {
-        return getProperty("test.user.username");
-    }
-
-    public static String getTestPassword() {
-        return getProperty("test.user.password");
     }
 }

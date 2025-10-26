@@ -52,5 +52,4 @@ public class RickAndMortyUtils {
                 .then()
                 .extract().jsonPath().getString("location.name");
     }
-
 }
